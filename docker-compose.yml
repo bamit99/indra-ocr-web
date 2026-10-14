@@ -1,0 +1,12 @@
+services:
+  indra-ocr:
+    build: ./indra-ocr-web
+    container_name: indra-ocr
+    restart: unless-stopped
+    ports:
+      - "8310:8310"
+    volumes:
+      - indra-models:/data/hf
+    mem_limit: 2g
+volumes:
+  indra-models:
