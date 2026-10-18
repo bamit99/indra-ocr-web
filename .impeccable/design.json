@@ -1,0 +1,236 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-18T00:00:00Z",
+  "title": "Design System: Indra OCR — Finding Aid",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Bone Paper",
+        "canonical": "#F4EFE4",
+        "purpose": "Page ground: body, header, footer, scrollbar track.",
+        "tonalRamp": ["#010100", "#050503", "#0F0E0A", "#211E19", "#3D3930", "#655F53", "#9D9583", "#E5DAC4"]
+      },
+      "panel": {
+        "role": "neutral",
+        "displayName": "Panel",
+        "canonical": "#FBF8F1",
+        "purpose": "Raised-by-tone surfaces: accession panel, claim stubs.",
+        "tonalRamp": ["#010101", "#050504", "#0F0E0C", "#201E1B", "#3B3933", "#635F57", "#9A958A", "#E1DACC"]
+      },
+      "sheet": {
+        "role": "neutral",
+        "displayName": "Sheet",
+        "canonical": "#FFFFFF",
+        "purpose": "Working surfaces: drop field, preview figures.",
+        "tonalRamp": ["#010101", "#050505", "#0E0E0E", "#1F1F1F", "#393939", "#606060", "#959595", "#DBDBDB"]
+      },
+      "ink": {
+        "role": "primary",
+        "displayName": "Engraving Ink",
+        "canonical": "#1A1712",
+        "purpose": "Primary text, masthead, ACCESSIONED stamp.",
+        "tonalRamp": ["#010101", "#050504", "#0F0E0B", "#211E1A", "#3C3933", "#645F57", "#9B9489", "#E3DACB"]
+      },
+      "ink-soft": {
+        "role": "primary",
+        "displayName": "Ink Soft",
+        "canonical": "#554C3F",
+        "purpose": "Secondary text: small-caps labels, section heads, ledger copy, footer row, PROCESSING stamp.",
+        "tonalRamp": ["#010100", "#060402", "#110D09", "#241E16", "#41382B", "#6B5E4C", "#A5937B", "#EFD8B9"]
+      },
+      "ink-faint": {
+        "role": "primary",
+        "displayName": "Ink Faint",
+        "canonical": "#6B6152",
+        "purpose": "Tertiary text: hints, placeholders, empty states, call numbers; disabled button background.",
+        "tonalRamp": ["#010100", "#060402", "#110D08", "#251E15", "#42382A", "#6C5E4A", "#A69378", "#F0D7B5"]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Rule",
+        "canonical": "#C9BFA9",
+        "purpose": "Primary hairlines: header/footer double rules, panel and stub borders, scrollbar thumb, dashed drop border.",
+        "tonalRamp": ["#010100", "#060402", "#110E07", "#241E13", "#423827", "#6C5F46", "#A59472", "#EFD9AD"]
+      },
+      "rule-soft": {
+        "role": "neutral",
+        "displayName": "Rule Soft",
+        "canonical": "#E2D9C6",
+        "purpose": "Secondary hairlines: section-head leader lines, ledger top border, preview caption divider.",
+        "tonalRamp": ["#010100", "#060502", "#110E08", "#231E14", "#403829", "#6A5F49", "#A39477", "#EDD9B3"]
+      },
+      "vermilion": {
+        "role": "primary",
+        "displayName": "Committed Vermilion",
+        "canonical": "#C8371E",
+        "purpose": "The single accent: stamp states, primary button, links, focus outline, caret, checked checkbox.",
+        "tonalRamp": ["#040000", "#120000", "#320200", "#720300", "#B41108", "#FF2D1A", "#FB7560", "#FDD0C7"]
+      },
+      "vermilion-deep": {
+        "role": "primary",
+        "displayName": "Vermilion Deep",
+        "canonical": "#A82C16",
+        "purpose": "Hover/pressed state of anything vermilion.",
+        "tonalRamp": ["#040000", "#120000", "#320200", "#670702", "#A4170C", "#F4301E", "#FB7560", "#FDD0C7"]
+      },
+      "vermilion-wash": {
+        "role": "primary",
+        "displayName": "Vermilion Wash",
+        "canonical": "#F6E4DC",
+        "purpose": "Accent at rest: text selection background, drop field drag-over fill.",
+        "tonalRamp": ["#020100", "#070403", "#130D0A", "#271C18", "#45362F", "#715B52", "#AD8F82", "#F9D2C2"]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Masthead h1 only — Libre Caslon Display, the one line of repository formality."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "All interface prose, checkbox labels (14.5px), hints and descriptions (12px)."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Tracked small caps: field labels, section heads (12px/0.2em), claim-stub kinds, preview captions, footer row (0.16em), meta rule (0.22em)."
+      },
+      "mono": {
+        "displayName": "Data / Mono",
+        "purpose": "Anything countable or status-bearing: ledger line (tabular-nums), filenames (15px), preview code (13px, JSON 12px)."
+      },
+      "stamp": {
+        "displayName": "Stamp",
+        "purpose": "Rubber-stamp state labels: bold Courier, wide 0.22em tracking, uppercase, inside a bordered rotated box."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "press",
+        "value": "0.5s cubic-bezier(.2,.9,.3,1.2) both",
+        "purpose": "Stamp press: from rotate(-8deg) scale(1.7) opacity 0 to rotate(-2.5deg) scale(1) opacity 1. Overshoot ease gives the stamp a physical thunk."
+      },
+      {
+        "name": "drop-field-hover",
+        "value": "border-color .18s, background .18s",
+        "purpose": "Drop field border/background transition on hover and drag-over."
+      },
+      {
+        "name": "button-background",
+        "value": "background .15s",
+        "purpose": "Primary button hover color shift vermilion to vermilion-deep."
+      },
+      {
+        "name": "button-press",
+        "value": "transform .05s",
+        "purpose": "Primary button active translateY(1px)."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "animation-duration .001s, transition-duration .001s under prefers-reduced-motion: reduce",
+        "purpose": "Global collapse — stamp lands instantly, rotation and final state preserved."
+      }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "560px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The single committing action (BEGIN CONVERSION / PROCESSING…).",
+      "html": "<button class=\"ds-btn\" type=\"button\">Begin conversion</button>",
+      "css": ".ds-btn{font:600 12.5px/1 'Archivo',system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;background:var(--vermilion,#C8371E);color:#fff;border:0;border-radius:2px;padding:14px 30px;cursor:pointer;transition:background .15s,transform .05s}.ds-btn:hover{background:var(--vermilion-deep,#A82C16)}.ds-btn:active{transform:translateY(1px)}.ds-btn:focus-visible{outline:2px solid var(--vermilion,#C8371E);outline-offset:2px}.ds-btn:disabled{background:var(--ink-faint,#6B6152);cursor:not-allowed;transform:none}"
+    },
+    {
+      "name": "Drop Field",
+      "kind": "input",
+      "refersTo": "drop-field",
+      "description": "Ruled paper form line awaiting a document; drag-over commits it in vermilion wash.",
+      "html": "<label class=\"ds-drop\" tabindex=\"0\"><span class=\"ds-drop-name empty\">Drop a PDF or image here, or click to choose</span><span class=\"ds-drop-hint\">PDF, PNG, JPG, WEBP, BMP, TIFF · up to 200 pages</span></label>",
+      "css": ".ds-drop{display:block;border:1px dashed var(--rule,#C9BFA9);background:var(--sheet,#FFFFFF);padding:20px;text-align:center;cursor:pointer;transition:border-color .18s,background .18s}.ds-drop:hover{border-color:var(--ink-soft,#554C3F)}.ds-drop.over,.ds-drop:focus-within{border-color:var(--vermilion,#C8371E);border-style:solid;background:var(--vermilion-wash,#F6E4DC)}.ds-drop:focus-visible{outline:2px solid var(--vermilion,#C8371E);outline-offset:2px}.ds-drop-name{display:block;font:400 15px/1.4 'Courier Prime',ui-monospace,'Courier New',monospace;color:var(--ink,#1A1712);word-break:break-all}.ds-drop-name.empty{color:var(--ink-faint,#6B6152)}.ds-drop-hint{display:block;margin-top:6px;font:400 12px/1.5 'Archivo',system-ui,sans-serif;color:var(--ink-faint,#6B6152)}"
+    },
+    {
+      "name": "Accession Stamp",
+      "kind": "custom",
+      "refersTo": "stamp",
+      "description": "Signature component: state labels pressed on as a slightly crooked rubber stamp.",
+      "html": "<span class=\"ds-stamp ds-stamp--digitized\">Digitized</span>",
+      "css": ".ds-stamp{display:inline-block;font:700 11px/1 'Courier Prime',ui-monospace,'Courier New',monospace;letter-spacing:.22em;text-transform:uppercase;border:2px solid currentColor;border-radius:3px;padding:6px 10px 5px;transform:rotate(-2.5deg);animation:ds-press .5s cubic-bezier(.2,.9,.3,1.2) both}.ds-stamp--accessioned{color:var(--ink,#1A1712)}.ds-stamp--processing{color:var(--ink-soft,#554C3F)}.ds-stamp--digitized,.ds-stamp--err{color:var(--vermilion,#C8371E)}@keyframes ds-press{from{transform:rotate(-8deg) scale(1.7);opacity:0}to{transform:rotate(-2.5deg) scale(1);opacity:1}}@media (prefers-reduced-motion:reduce){.ds-stamp{animation-duration:.001s}}"
+    },
+    {
+      "name": "Ledger Line",
+      "kind": "custom",
+      "refersTo": "ledger",
+      "description": "Live monospace status row under the form: stage, elapsed time, call number.",
+      "html": "<div class=\"ds-ledger\" role=\"status\" aria-live=\"polite\"><span class=\"ds-ledger-stamp\">Processing</span><span class=\"ds-ledger-text\">Processing, elapsed 00:12.4. First accession downloads ~18 MB models (one time).</span></div>",
+      "css": ".ds-ledger{display:flex;align-items:center;gap:14px;margin-top:18px;border-top:1px solid var(--rule-soft,#E2D9C6);padding-top:14px;min-height:38px;flex-wrap:wrap}.ds-ledger-stamp{font:700 11px/1 'Courier Prime',ui-monospace,'Courier New',monospace;letter-spacing:.22em;text-transform:uppercase;border:2px solid var(--ink-soft,#554C3F);border-radius:3px;padding:6px 10px 5px;color:var(--ink-soft,#554C3F);transform:rotate(-2.5deg)}.ds-ledger-text{font:400 13px/1.5 'Courier Prime',ui-monospace,'Courier New',monospace;color:var(--ink-soft,#554C3F);font-variant-numeric:tabular-nums}"
+    },
+    {
+      "name": "Claim Stub",
+      "kind": "card",
+      "refersTo": "claim-stub",
+      "description": "Result download card: kind label, mono download link, one-line description.",
+      "html": "<div class=\"ds-stub\"><span class=\"ds-stub-kind\">Claim stub — one</span><a class=\"ds-stub-link\" href=\"#\">Markdown (.md)</a><span class=\"ds-stub-desc\">Structured text: headings, lists, tables.</span></div>",
+      "css": ".ds-stub{flex:1 1 200px;border:1px solid var(--rule,#C9BFA9);background:var(--panel,#FBF8F1);padding:14px 16px;display:flex;flex-direction:column;gap:4px;border-radius:0}.ds-stub-kind{font:600 11px/1 'Archivo',system-ui,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft,#554C3F)}.ds-stub-link{font:700 14px/1.4 'Courier Prime',ui-monospace,'Courier New',monospace;color:var(--vermilion,#C8371E);word-break:break-all;text-underline-offset:3px;text-decoration-thickness:1px}.ds-stub-link:hover{color:var(--vermilion-deep,#A82C16)}.ds-stub-link:focus-visible{outline:2px solid var(--vermilion,#C8371E);outline-offset:2px}.ds-stub-desc{font:400 12px/1.45 'Archivo',system-ui,sans-serif;color:var(--ink-faint,#6B6152)}"
+    },
+    {
+      "name": "Preview Panel",
+      "kind": "card",
+      "refersTo": "preview",
+      "description": "Ruled reading column for converted output; caption divided from code by a soft hairline.",
+      "html": "<figure class=\"ds-preview\"><figcaption class=\"ds-preview-cap\">Reading copy: Markdown</figcaption><pre class=\"ds-preview-body\"># Transcribed page…</pre></figure>",
+      "css": ".ds-preview{flex:1 1 300px;margin:0;border:1px solid var(--rule,#C9BFA9);background:var(--sheet,#FFFFFF);border-radius:0}.ds-preview-cap{font:600 11px/1 'Archivo',system-ui,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft,#554C3F);padding:10px 14px;border-bottom:1px solid var(--rule-soft,#E2D9C6)}.ds-preview-body{margin:0;padding:14px;max-height:44vh;overflow:auto;white-space:pre-wrap;word-break:break-word;font:400 13px/1.6 'Courier Prime',ui-monospace,'Courier New',monospace;color:var(--ink,#1A1712)}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Finding Aid — the Archival Accession Desk",
+    "overview": "OCR intake is staged as archival accession: every document that arrives is accessioned, stamped, and served from a claim desk. The page reads like a repository reading room — bone paper ground, engraving ink, hairline rules, tracked small-caps labels — not like a developer tool. It explicitly refuses the category default: the dark dev-tool card, the system-font stack, the spinner status line.\n\nDensity is form-like and centered: a single 760px column carries an accession panel whose fields are ruled like paper form lines, a live monospace ledger line underneath, then claim stubs and ruled reading columns for results. The memorable moment is the stamp — states press themselves onto the page (ACCESSIONED → PROCESSING → DIGITIZED) over a live monospace ledger counting pages and seconds.\n\nOne accent does all the committing. Everything else is warm neutral paper, ink, and rule tones, held apart by hairlines rather than depth. All fonts are self-hosted OFL Google Fonts (Libre Caslon Display, Archivo, Courier Prime).",
+    "keyCharacteristics": [
+      "Archival, printed, ruled — flat surfaces separated by hairlines, never by glass or glow.",
+      "Three-voice type: Caslon for the masthead only, Archivo for interface prose and labels, Courier Prime for anything countable or status-bearing.",
+      "Vermilion as the single committed accent: stamps, primary action, links, errors.",
+      "Motion is a physical press, not a digital fade; reduced-motion collapses it to instant."
+    ],
+    "rules": [
+      {
+        "name": "The Vermilion Rule",
+        "body": "Vermilion appears only where the system commits or signals: stamps, the primary button, links, focus, errors. Its rarity against bone paper is the point; if a screen has more than one vermilion element beyond action/error/active-state, one of them is wrong.",
+        "section": "colors"
+      },
+      {
+        "name": "The Tone-Depth Rule",
+        "body": "Depth is expressed only by the paper → panel → sheet ladder plus hairlines (#F4EFE4 → #FBF8F1 → #FFFFFF). Never by shadow.",
+        "section": "colors"
+      },
+      {
+        "name": "The Data Rule",
+        "body": "Anything countable, status-bearing, or identifying — elapsed time, call numbers, filenames, file contents — is Courier Prime. Prose is Archivo. Display type never leaves the masthead.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat-By-Default Rule",
+        "body": "A surface is a flat tone with a hairline edge. If something needs to feel raised, move it one step up the tone ladder (#F4EFE4 → #FBF8F1 → #FFFFFF); never add a shadow.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do keep the page on the tone ladder #F4EFE4 → #FBF8F1 → #FFFFFF and separate surfaces with 1px solid #C9BFA9 hairlines.",
+      "Do reserve #C8371E for stamps, the primary button, links, focus rings, checked checkboxes, and errors — hover states step to #A82C16, drag-over/idle washes use #F6E4DC.",
+      "Do set every label, section head, caption, and footer row as Archivo 600 11–12px, uppercase, tracked 0.16em–0.22em, in ink-soft.",
+      "Do set every number, status, filename, call number, and code block in Courier Prime with tabular-nums where values update live.",
+      "Do use square corners (0px) everywhere except the button (2px) and the stamp (3px).",
+      "Do press new stamps with the press keyframe (-8deg/1.7 → -2.5deg/1, 0.5s cubic-bezier(.2,.9,.3,1.2)) and honor prefers-reduced-motion."
+    ],
+    "donts": [
+      "Don't add shadows, glass, blur, or glow — depth is tone + hairline only.",
+      "Don't use a spinner or generic progress bar for status; states are stamps plus a monospace ledger line.",
+      "Don't introduce a second accent hue, a dark-mode dev-tool surface, or system-font defaults.",
+      "Don't put display Caslon anywhere except the masthead h1.",
+      "Don't use vermilion for decorative emphasis, long text, or large fills — its rarity is the system."
+    ]
+  }
+}
