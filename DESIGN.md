@@ -249,6 +249,16 @@ Borders are 1px hairlines in `#C9BFA9` (or `#E2D9C6` for interior dividers), exc
 - Double hairline rule on top (border + inset line at `top: 3px`), `18px 0 34px` padding.
 - Row: Archivo 600 `11px / 0.16em / uppercase` ink-soft; API line (`POST /convert · GET /download/{id}`) in mono `11px / 0.1em` ink-faint; copyright name in ink; links vermilion (hover vermilion-deep). Right group pushed with `margin-left: auto`.
 
+### Provenance Section
+- Sits between the results panel and the footer, separated from the main column by a `14px` margin.
+- Panel tone `#FBF8F1` on paper ground, `1px solid #C9BFA9` border, `26px 26px 22px` padding — same shape as the accession panel.
+- Section head: Archivo 600 `12px / 0.2em / uppercase` ink-soft, with a hairline leader to the right edge (same rule as `.panel h2`).
+- Facts grid: `repeat(auto-fit, minmax(210px, 1fr))`, `0 26px` column gap, each fact separated by a `1px solid #E2D9C6` top rule.
+- Fact label: Archivo 600 `11px / 0.16em / uppercase` ink-faint. Fact value: Archivo 400 `13px / 1.55` ink; numbers inside values use the mono face so they read as data.
+- Six facts: Engine, Model, Recogniser, Coverage, Benchmarks, Speed — the upstream project's own headline numbers, so a reader can judge the engine without leaving the page.
+- Link row: `20px` top padding, `1px solid #E2D9C6` top rule, Archivo 600 `11px / 0.14em / uppercase` vermilion links, `8px 20px` gaps. Five links: upstream project, model weights, changelog, upstream licence, this wrapper.
+- Closing note: Archivo 400 `12px / 1.6` ink-faint, vermilion inline links. Carries the Datalab attribution, the naming origin, and the code (Apache-2.0) vs weights (modified OpenRAIL-M) licence split.
+
 ## Do's and Don'ts
 
 ### Do:
