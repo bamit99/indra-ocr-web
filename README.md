@@ -2,7 +2,7 @@
 
 A tiny self-hosted web UI around [Indra OCR](https://huggingface.co/datalab-to/indra-ocr) — upload a PDF or image in your browser, get back **Markdown** and **JSON** (lines, bounding boxes, layout blocks, confidences) for download.
 
-Built for anyone who wants OCR-as-a-service on their own machine with zero GPU: Indra OCR is a ~1M-parameter, ~18MB ONNX model that runs fast on plain CPUs.
+Built for anyone who wants OCR-as-a-service on their own machine with zero GPU: Indra OCR is a ~1.25M-parameter recogniser (~7.3M parameters across all default models), ~76MB of ONNX models, and runs fast on plain CPUs.
 
 ## Features
 
@@ -17,7 +17,7 @@ Built for anyone who wants OCR-as-a-service on their own machine with zero GPU: 
 
 - [Docker](https://docs.docker.com/get-docker/) with Docker Compose (tested with Docker 29.x / Compose v2)
 - ~2GB RAM available for the container (CPU only — no GPU needed)
-- Internet access on first start to download the ~18MB of models from Hugging Face (cached afterwards)
+- Internet access on first start to download the ~76MB of models from Hugging Face (cached afterwards)
 - Python **3.10+** only if you want to run without Docker
 
 ## Quickstart (Docker — recommended)
