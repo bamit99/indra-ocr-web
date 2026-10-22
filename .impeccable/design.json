@@ -43,7 +43,7 @@
         "role": "primary",
         "displayName": "Ink Faint",
         "canonical": "#6B6152",
-        "purpose": "Tertiary text: hints, placeholders, empty states, call numbers; disabled button background.",
+        "purpose": "Tertiary text: hints, placeholders, empty states, the engine version stamp and API line; disabled button background.",
         "tonalRamp": ["#010100", "#060402", "#110D08", "#251E15", "#42382A", "#6C5E4A", "#A69378", "#F0D7B5"]
       },
       "rule": {
@@ -165,7 +165,7 @@
       "name": "Ledger Line",
       "kind": "custom",
       "refersTo": "ledger",
-      "description": "Live monospace status row under the form: stage, elapsed time, call number.",
+      "description": "Live monospace status row under the form: stage, elapsed time, result id.",
       "html": "<div class=\"ds-ledger\" role=\"status\" aria-live=\"polite\"><span class=\"ds-ledger-stamp\">Processing</span><span class=\"ds-ledger-text\">Processing, elapsed 00:12.4. First accession downloads ~18 MB models (one time).</span></div>",
       "css": ".ds-ledger{display:flex;align-items:center;gap:14px;margin-top:18px;border-top:1px solid var(--rule-soft,#E2D9C6);padding-top:14px;min-height:38px;flex-wrap:wrap}.ds-ledger-stamp{font:700 11px/1 'Courier Prime',ui-monospace,'Courier New',monospace;letter-spacing:.22em;text-transform:uppercase;border:2px solid var(--ink-soft,#554C3F);border-radius:3px;padding:6px 10px 5px;color:var(--ink-soft,#554C3F);transform:rotate(-2.5deg)}.ds-ledger-text{font:400 13px/1.5 'Courier Prime',ui-monospace,'Courier New',monospace;color:var(--ink-soft,#554C3F);font-variant-numeric:tabular-nums}"
     },
@@ -208,7 +208,7 @@
       },
       {
         "name": "The Data Rule",
-        "body": "Anything countable, status-bearing, or identifying — elapsed time, call numbers, filenames, file contents — is Courier Prime. Prose is Archivo. Display type never leaves the masthead.",
+        "body": "Anything countable, status-bearing, or identifying — elapsed time, the engine version stamp, result ids, filenames, file contents — is Courier Prime. Prose is Archivo. Display type never leaves the masthead.",
         "section": "typography"
       },
       {
@@ -221,7 +221,7 @@
       "Do keep the page on the tone ladder #F4EFE4 → #FBF8F1 → #FFFFFF and separate surfaces with 1px solid #C9BFA9 hairlines.",
       "Do reserve #C8371E for stamps, the primary button, links, focus rings, checked checkboxes, and errors — hover states step to #A82C16, drag-over/idle washes use #F6E4DC.",
       "Do set every label, section head, caption, and footer row as Archivo 600 11–12px, uppercase, tracked 0.16em–0.22em, in ink-soft.",
-      "Do set every number, status, filename, call number, and code block in Courier Prime with tabular-nums where values update live.",
+      "Do set every number, status, filename, result id, and code block in Courier Prime with tabular-nums where values update live.",
       "Do use square corners (0px) everywhere except the button (2px) and the stamp (3px).",
       "Do press new stamps with the press keyframe (-8deg/1.7 → -2.5deg/1, 0.5s cubic-bezier(.2,.9,.3,1.2)) and honor prefers-reduced-motion."
     ],
