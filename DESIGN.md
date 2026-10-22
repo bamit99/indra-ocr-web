@@ -165,7 +165,7 @@ A warm bone-paper palette: two paper tones, three ink tones, two rule tones, and
 - **Label** (600, `11px`, 1, `0.18em`, uppercase): field labels, claim-stub kinds, preview captions, footer row (`0.16em`), meta rule (`0.22em`). Ink-soft.
 - **Body** (400, `16px`, 1.55): Archivo prose. Checkbox label `14.5px`; hints and descriptions `12px` (1.5).
 - **Data / mono** (400, `13px`, 1.5): ledger line with `font-variant-numeric: tabular-nums`; document filename `15px`; preview code `13px/1.6` (`12px` for JSON). Ink-soft or ink.
-- **Shelf / call number** (mono, `11px`, `0.14em`/`0.1em`, uppercase): "MS·INDRA·2026" shelf mark, footer folio. Ink-faint.
+- **Shelf / call number** (mono, `11px`, `0.14em`/`0.1em`, uppercase): "MS·INDRA·2026" shelf mark in the masthead, "Collection MS·INDRA·2026" in the footer. Ink-faint.
 - **Button** (600, `12.5px`, `0.16em`, uppercase): Archivo on the primary action.
 - **Stamp** (700, `11px`, `0.22em`, uppercase): Courier Prime, always inside a bordered, slightly rotated box.
 
