@@ -9,6 +9,14 @@ from fastapi import FastAPI, File, Form, UploadFile
 from fastapi.responses import HTMLResponse, Response
 from fastapi.staticfiles import StaticFiles
 import indra_ocr
+from importlib.metadata import PackageNotFoundError, version as _pkg_version
+
+
+def _engine_version():
+    try:
+        return _pkg_version("indra-ocr")
+    except PackageNotFoundError:
+        return getattr(indra_ocr, "__version__", "unknown")
 
 app = FastAPI(title="Indra OCR Web", docs_url=None, redoc_url=None)
 
@@ -176,7 +184,7 @@ footer::before{content:"";position:absolute;left:0;right:0;top:3px;height:1px;ba
   <div class="masthead">
     <svg class="mark" width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="6.2" fill="none" stroke="currentColor" stroke-width="1.6"/><line x1="11" y1="0" x2="11" y2="22" stroke="currentColor" stroke-width="1.6"/><line x1="0" y1="11" x2="22" y2="11" stroke="currentColor" stroke-width="1.6"/></svg>
     <h1>Indra OCR</h1>
-    <span class="shelf">MS·INDRA·2026</span>
+    <span class="shelf">ENGINE v__ENGINE__</span>
   </div>
   <div class="meta-rule">Self-hosted · CPU-only</div>
 </div></header>
@@ -218,7 +226,7 @@ footer::before{content:"";position:absolute;left:0;right:0;top:3px;height:1px;ba
 </div></main>
 
 <footer><div class="wrap"><div class="foot-row">
-  <span class="callno">Collection MS·INDRA·2026</span>
+  <span class="callno">POST /convert · GET /download/{id}</span>
   <span class="right">© 2026 <span class="copyright-name">Amit Bhatnagar</span> · <a href="https://github.com/bamit99">github.com/bamit99</a></span>
 </div></div></footer>
 
@@ -267,7 +275,7 @@ f.onsubmit=async function(e){e.preventDefault();
     document.getElementById('dljson').href='/download/'+j.id+'?fmt=json';
     clearInterval(timer);
     setStamp('Digitized','digitized');
-    ledgertext.textContent='Call number INDRA·'+j.id+', '+j.pages+' page(s) in '+j.seconds+'s. Claim stubs below.';
+    ledgertext.textContent='Result '+j.id+' · '+j.pages+' page(s) in '+j.seconds+'s. Claim stubs below.';
     result.hidden=false;
   }catch(err){
     clearInterval(timer);
@@ -277,7 +285,7 @@ f.onsubmit=async function(e){e.preventDefault();
 };
 </script>
 </body>
-</html>"""
+</html>""".replace("__ENGINE__", _engine_version())
 
 
 @app.post("/convert")
