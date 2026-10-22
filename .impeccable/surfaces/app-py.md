@@ -11,7 +11,7 @@ Scope: single page at `/`. Mode: Operate. Audience: self-hosters/devs/researcher
 
 Memorable moment: the accession stamp — states stamp themselves ACCESSIONED → PROCESSING → DIGITIZED with a live monospace ledger line. The result id is shown as a Result reference (not a decorative call number).
 
-Unresolved: none; user picked the assigned direction, delegated details.
+Unresolved: none; user picked the assigned direction, delegated details. Later revision: decorative MS·INDRA·2026 marks removed (template leftover), replaced by a live engine version stamp, the page API in the footer, and a provenance section pointing at the upstream Datalab project.
 
 ## Direction contract
 
@@ -21,7 +21,7 @@ OWN-WORLD: bone paper ground (#F4EFE4), engraving ink (#1A1712), committed vermi
 
 STORY: visitor lands at an intake desk, reads the accession form, drops a file, watches visible stamped stages with a live monospace ledger (pages / seconds), then collects claim stubs (.md / .jsonl) with previews set in ruled reading columns.
 
-FIRST VIEWPORT: masthead "INDRA OCR" in ink with a repository meta rule beneath (self-hosted · CPU-only · ~18MB ONNX model), centered accession form — file field ruled like a form line, math toggle as form checkbox, vermilion BEGIN CONVERSION button with stamp character — and the ledger status line directly below. Footer: hairline rule, © 2026 Amit Bhatnagar + GitHub link in small caps + monospace API line (POST /convert · GET /download/{id}). Masthead carries a live engine version stamp (ENGINE v<version>) read from the installed indra-ocr distribution.
+FIRST VIEWPORT: masthead "INDRA OCR" in ink with a repository meta rule beneath (self-hosted · CPU-only · ~76MB ONNX models), centered accession form — file field ruled like a form line, math toggle as form checkbox, vermilion BEGIN CONVERSION button with stamp character — and the ledger status line directly below. Footer: hairline rule, © 2026 Amit Bhatnagar + GitHub link in small caps + monospace API line (POST /convert · GET /download/{id}). Below the results panel: a PROVENANCE panel — six facts (engine, model size, recogniser parameters, language coverage, benchmarks, speed) and a link row out to the upstream Datalab project, model weights, changelog and licences, so the page states what it is running and where it came from. Masthead carries a live engine version stamp (ENGINE v<version>) read from the installed indra-ocr distribution.
 
 FORM: assigned direction (candidate 3 of grounded list), seed key 3c204327.
 
