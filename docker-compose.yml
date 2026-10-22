@@ -7,7 +7,6 @@ services:
       - "8310:8310"
     volumes:
       - indra-models:/data/hf
-    # mem_limit removed: this Docker/crun runtime cannot set memory.max.
-    # Re-add "mem_limit: 2g" on runtimes that support it.
+    mem_limit: 2g
 volumes:
   indra-models:
