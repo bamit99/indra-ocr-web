@@ -12,16 +12,16 @@ Self-hosters, developers, researchers who want OCR on their own machine without 
 
 ## Product Purpose
 
-Tiny self-hosted web UI around Indra OCR: upload PDF/image, get Markdown and JSON (lines, bounding boxes, layout blocks, confidences) back. Success = conversion done and files downloaded, on plain CPU, ~18MB ONNX model, zero GPU.
+Tiny self-hosted web UI around Indra OCR: upload PDF/image, get Markdown and JSON (lines, bounding boxes, layout blocks, confidences) back. Success = conversion done and files downloaded, on plain CPU, ~76MB ONNX models, zero GPU.
 
 ## Positioning
 
-OCR-as-a-service on your own machine: ~1M-parameter ONNX model, single Docker container, no PyTorch, no cloud upload of documents.
+OCR-as-a-service on your own machine: ~1.25M-parameter recogniser (~7.3M across all default models), single Docker container, no PyTorch, no cloud upload of documents.
 
 ## Operating Context
 
 - Browser page at localhost:8310; backend drivable via `POST /convert`, `GET /download/{id}`
-- First run downloads ~18MB models from Hugging Face (cached in volume)
+- First run downloads ~76MB models from Hugging Face (cached in volume)
 - CPU-only, ~2GB RAM container
 
 ## Capabilities and Constraints
