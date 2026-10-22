@@ -137,7 +137,7 @@ A warm bone-paper palette: two paper tones, three ink tones, two rule tones, and
 ### Secondary
 - **Engraving Ink** (`#1A1712`): primary text; masthead; the ACCESSIONED stamp.
 - **Ink Soft** (`#554C3F`): secondary text — small-caps labels, section heads, ledger copy, footer row.
-- **Ink Faint** (`#6B6152`): tertiary text — hints, placeholders, empty-state copy, call numbers; also the disabled button background.
+- **Ink Faint** (`#6B6152`): tertiary text — hints, placeholders, empty-state copy, the engine stamp and API line; also the disabled button background.
 
 ### Neutral
 - **Bone Paper** (`#F4EFE4`): page ground (body, header, footer), scrollbar track.
@@ -165,12 +165,12 @@ A warm bone-paper palette: two paper tones, three ink tones, two rule tones, and
 - **Label** (600, `11px`, 1, `0.18em`, uppercase): field labels, claim-stub kinds, preview captions, footer row (`0.16em`), meta rule (`0.22em`). Ink-soft.
 - **Body** (400, `16px`, 1.55): Archivo prose. Checkbox label `14.5px`; hints and descriptions `12px` (1.5).
 - **Data / mono** (400, `13px`, 1.5): ledger line with `font-variant-numeric: tabular-nums`; document filename `15px`; preview code `13px/1.6` (`12px` for JSON). Ink-soft or ink.
-- **Shelf / call number** (mono, `11px`, `0.14em`/`0.1em`, uppercase): "MS·INDRA·2026" shelf mark in the masthead, "Collection MS·INDRA·2026" in the footer. Ink-faint.
+- **Engine stamp / API line** (mono, `11px`, `0.14em`/`0.1em`, uppercase): masthead carries the live OCR engine version ("ENGINE v1.1.2"), footer carries the page's API ("POST /convert · GET /download/{id}"). Both are functional facts, not decorative marks. Ink-faint.
 - **Button** (600, `12.5px`, `0.16em`, uppercase): Archivo on the primary action.
 - **Stamp** (700, `11px`, `0.22em`, uppercase): Courier Prime, always inside a bordered, slightly rotated box.
 
 ### Named Rules
-**The Data Rule.** Anything countable, status-bearing, or identifying — elapsed time, call numbers, filenames, file contents — is Courier Prime. Prose is Archivo. Display type never leaves the masthead.
+**The Data Rule.** Anything countable, status-bearing, or identifying — elapsed time, the engine version stamp, result ids, filenames, file contents — is Courier Prime. Prose is Archivo. Display type never leaves the masthead.
 
 ## Layout
 
@@ -182,7 +182,7 @@ Header and footer carry a **double rule**: a 1px border plus a second 1px rule i
 
 Claim stubs (`flex: 1 1 200px`) and previews (`flex: 1 1 300px`) wrap into rows; both the masthead and the footer row wrap on narrow screens.
 
-**Responsive:** one breakpoint, `560px` — masthead wraps (shelf mark drops to its own line, `padding-top: 24px`), panel padding tightens to `20px 16px`.
+**Responsive:** one breakpoint, `560px` — masthead wraps (engine version stamp drops to its own line, `padding-top: 24px`), panel padding tightens to `20px 16px`.
 
 ## Elevation & Depth
 
@@ -203,7 +203,7 @@ Borders are 1px hairlines in `#C9BFA9` (or `#E2D9C6` for interior dividers), exc
 ## Components
 
 ### Masthead
-- Caslon `h1` (display token) in ink, vermilion 22px SVG mark at left (baseline row, `14px` gap), shelf mark `MS·INDRA·2026` in mono `11px / 0.14em / uppercase` pushed right (`margin-left: auto`).
+- Caslon `h1` (display token) in ink, vermilion 22px SVG mark at left (baseline row, `14px` gap), engine version stamp `ENGINE v<version>` in mono `11px / 0.14em / uppercase` pushed right (`margin-left: auto`). The version is read at request time from the installed `indra-ocr` distribution, so it can never drift from the running engine.
 - Below: meta rule — Archivo 600 `11px / 0.22em / uppercase`, ink-soft ("Self-hosted · CPU-only").
 - Bottom edge: double hairline rule (`1px solid #C9BFA9` + inset `#C9BFA9` line at `bottom: 3px`).
 
@@ -247,7 +247,7 @@ Borders are 1px hairlines in `#C9BFA9` (or `#E2D9C6` for interior dividers), exc
 
 ### Footer
 - Double hairline rule on top (border + inset line at `top: 3px`), `18px 0 34px` padding.
-- Row: Archivo 600 `11px / 0.16em / uppercase` ink-soft; call number in mono `11px / 0.1em` ink-faint; copyright name in ink; links vermilion (hover vermilion-deep). Right group pushed with `margin-left: auto`.
+- Row: Archivo 600 `11px / 0.16em / uppercase` ink-soft; API line (`POST /convert · GET /download/{id}`) in mono `11px / 0.1em` ink-faint; copyright name in ink; links vermilion (hover vermilion-deep). Right group pushed with `margin-left: auto`.
 
 ## Do's and Don'ts
 
@@ -255,7 +255,7 @@ Borders are 1px hairlines in `#C9BFA9` (or `#E2D9C6` for interior dividers), exc
 - **Do** keep the page on the tone ladder `#F4EFE4` → `#FBF8F1` → `#FFFFFF` and separate surfaces with `1px solid #C9BFA9` hairlines.
 - **Do** reserve `#C8371E` for stamps, the primary button, links, focus rings, checked checkboxes, and errors — hover states step to `#A82C16`, drag-over/idle washes use `#F6E4DC`.
 - **Do** set every label, section head, caption, and footer row as Archivo 600 `11–12px`, uppercase, tracked `0.16em–0.22em`, in ink-soft.
-- **Do** set every number, status, filename, call number, and code block in Courier Prime with `tabular-nums` where values update live.
+- **Do** set every number, status, filename, result id, and code block in Courier Prime with `tabular-nums` where values update live.
 - **Do** use square corners (`0px`) everywhere except the button (`2px`) and the stamp (`3px`).
 - **Do** press new stamps with the `press` keyframe (`-8deg/1.7 → -2.5deg/1`, `0.5s cubic-bezier(.2,.9,.3,1.2)`) and honor `prefers-reduced-motion`.
 
