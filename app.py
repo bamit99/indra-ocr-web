@@ -159,6 +159,25 @@ button:disabled{background:var(--ink-faint);cursor:not-allowed;transform:none}
 ::-webkit-scrollbar-thumb:hover{background:var(--ink-faint)}
 html{scrollbar-color:var(--rule) var(--paper);scrollbar-width:thin}
 
+/* provenance */
+.prov{background:var(--panel);border:1px solid var(--rule);padding:26px 26px 22px;margin-top:14px}
+.prov h2{margin:0 0 18px;font:600 12px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;
+  color:var(--ink-soft);display:flex;align-items:center;gap:10px}
+.prov h2::after{content:"";flex:1;height:1px;background:var(--rule-soft)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:0 26px}
+.fact{padding:9px 0;border-top:1px solid var(--rule-soft)}
+.fact:first-child{border-top:0}
+.fact dt{font:600 11px/1.4 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint)}
+.fact dd{margin:4px 0 0;font:400 13px/1.55 var(--sans);color:var(--ink)}
+.fact dd .num{font-family:var(--mono);font-size:13px}
+.prov-links{margin-top:20px;padding-top:16px;border-top:1px solid var(--rule-soft);
+  display:flex;flex-wrap:wrap;gap:8px 20px;align-items:baseline}
+.prov-links a{font:600 11px/1.6 var(--sans);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--vermilion);text-underline-offset:3px;text-decoration-thickness:1px}
+.prov-links a:hover{color:var(--vermilion-deep)}
+.prov-note{margin:14px 0 0;font:400 12px/1.6 var(--sans);color:var(--ink-faint)}
+.prov-note a{color:var(--vermilion)}
+
 /* footer */
 footer{border-top:1px solid var(--rule);margin-top:44px;padding:18px 0 34px;position:relative}
 footer::before{content:"";position:absolute;left:0;right:0;top:3px;height:1px;background:var(--rule)}
@@ -223,6 +242,25 @@ footer::before{content:"";position:absolute;left:0;right:0;top:3px;height:1px;ba
       <figure class="preview json"><figcaption>Record copy: JSON</figcaption><pre id="outj"></pre></figure>
     </div>
   </section>
+  <section class="prov" aria-labelledby="prov-h">
+    <h2 id="prov-h">Provenance</h2>
+    <dl class="facts">
+      <div class="fact"><dt>Engine</dt><dd><span class="num">Indra OCR v__ENGINE__</span> by Datalab — ONNX Runtime, no PyTorch, no GPU</dd></div>
+      <div class="fact"><dt>Model</dt><dd><span class="num">~76 MB</span> on first run (<span class="num">30 MB</span> networks + <span class="num">46 MB</span> language models), cached in the volume</dd></div>
+      <div class="fact"><dt>Recogniser</dt><dd><span class="num">1.25M</span> parameters in <span class="num">rec.onnx</span>; <span class="num">7.3M</span> across all default models</dd></div>
+      <div class="fact"><dt>Coverage</dt><dd><span class="num">80+</span> languages — Latin, Cyrillic, Greek, Indic, CJK, right-to-left; handwriting, rotated pages, dark ground</dd></div>
+      <div class="fact"><dt>Benchmarks</dt><dd><span class="num">66.7</span> on OmniParseBench (<span class="num">71.4</span> with math) vs <span class="num">58.4</span> for PaddleOCR PP-StructureV3</dd></div>
+      <div class="fact"><dt>Speed</dt><dd>About <span class="num">44</span> pages/s on 32 CPU cores — <span class="num">15×</span> Tesseract on the same pages</dd></div>
+    </dl>
+    <div class="prov-links">
+      <a href="https://github.com/datalab-to/indra" target="_blank" rel="noopener">Upstream project</a>
+      <a href="https://huggingface.co/datalab-to/indra-ocr" target="_blank" rel="noopener">Model weights</a>
+      <a href="https://github.com/datalab-to/indra/blob/main/CHANGELOG.md" target="_blank" rel="noopener">Changelog</a>
+      <a href="https://github.com/datalab-to/indra/blob/main/LICENSE" target="_blank" rel="noopener">Upstream licence</a>
+      <a href="https://github.com/bamit99/indra-ocr-web" target="_blank" rel="noopener">This wrapper</a>
+    </div>
+    <p class="prov-note">Indra OCR is developed by <a href="https://www.datalab.to" target="_blank" rel="noopener">Datalab</a> and named for the Vedic god Indra. Upstream code is Apache-2.0; the model weights carry a modified OpenRAIL-M licence — free for research, personal use and startups under $20M, not for competing with Datalab's API. This wrapper is MIT-licensed; it is a UI around the upstream package, not a fork of it.</p>
+  </section>
 </div></main>
 
 <footer><div class="wrap"><div class="foot-row">
@@ -261,7 +299,7 @@ f.onsubmit=async function(e){e.preventDefault();
   timer=setInterval(function(){
     if(stamp.textContent!=='Processing'){setStamp('Processing','processing');}
     ledgertext.textContent='Processing, elapsed '+fmt(Date.now()-t0)+
-      '. First accession downloads ~18 MB models (one time).';},100);
+      '. First accession downloads ~76 MB models (one time).';},100);
   try{
     var r=await fetch('/convert',{method:'POST',body:new FormData(f)});
     if(!r.ok){throw new Error('server replied '+r.status+' — '+(await r.text()).slice(0,200));}
