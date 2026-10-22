@@ -218,7 +218,7 @@ footer::before{content:"";position:absolute;left:0;right:0;top:3px;height:1px;ba
 </div></main>
 
 <footer><div class="wrap"><div class="foot-row">
-  <span class="callno">Folio MS·INDRA·2026</span>
+  <span class="callno">Collection MS·INDRA·2026</span>
   <span class="right">© 2026 <span class="copyright-name">Amit Bhatnagar</span> · <a href="https://github.com/bamit99">github.com/bamit99</a></span>
 </div></div></footer>
 
